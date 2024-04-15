@@ -1,0 +1,21 @@
+// Напишите программу, которая должна прочитать два значения из System.in:
+// - количество людей
+// - количество кусочков в одной пицце.
+// Гарантируется, что входные параметры — целые положительные числа.
+// Программа должна напечатать минимальное количество пицц (не ноль), которое надо заказать, чтобы у всех было одинаковое количество ломтиков и не осталось ни одного лишнего.
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int countPeople = input.nextInt(); // количество людей
+        int pizzaPiece = input.nextInt(); // количество кусков пиццы
+        int countPizza = 0;
+
+        do {
+            countPizza++;
+        } while ((countPeople % countPizza == 0 && pizzaPiece % countPizza == 0));
+        System.out.println(countPizza);
+    }
+}
